@@ -331,6 +331,7 @@ static int handle_script (lua_State *L, char **argv, int n) {
   fname = argv[n];
   if (strcmp(fname, "-") == 0 && strcmp(argv[n-1], "--") != 0)
     fname = NULL;  /* stdin */
+  //parser×ßluaL_loadfile
   status = luaL_loadfile(L, fname);
   lua_insert(L, -(narg+1));
   if (status == LUA_OK)
